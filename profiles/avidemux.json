@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "name": "Avidemux",
+  "device": "ulanzi-d100h",
+  "app": "Avidemux 2.8",
+  "description": "Frame-accurate cutting. Dial = frame step; top row = keyframe nav + play; sides = markers, delete, undo.",
+  "controls": {
+    "dial_ccw": {
+      "output": "Left",
+      "label": "Previous frame"
+    },
+    "dial_cw": {
+      "output": "Right",
+      "label": "Next frame"
+    },
+    "dial_press": {
+      "output": "space",
+      "label": "Play/Stop"
+    },
+    "top_left": {
+      "output": "Down",
+      "label": "Previous keyframe"
+    },
+    "top_center": {
+      "output": "space",
+      "label": "Play/Stop"
+    },
+    "top_right": {
+      "output": "Up",
+      "label": "Next keyframe"
+    },
+    "left_upper": {
+      "output": "Control_L + Prior",
+      "label": "Set marker A"
+    },
+    "right_upper": {
+      "output": "Control_L + Next",
+      "label": "Set marker B"
+    },
+    "left_lower": {
+      "output": "Delete",
+      "label": "Delete A→B selection"
+    },
+    "right_lower": {
+      "output": "Control_L + z",
+      "label": "Undo"
+    }
+  }
+}

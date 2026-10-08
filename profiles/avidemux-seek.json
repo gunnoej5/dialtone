@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "name": "Avidemux Seek",
+  "device": "ulanzi-d100h",
+  "app": "Avidemux 2.8",
+  "description": "Coarse scrubbing. Dial = ±1 s; top row = ±4 s around play; sides = marker jumps.",
+  "controls": {
+    "dial_ccw": {
+      "output": "Shift_L + Left",
+      "label": "Back 1 s"
+    },
+    "dial_cw": {
+      "output": "Shift_L + Right",
+      "label": "Forward 1 s"
+    },
+    "dial_press": {
+      "output": "space",
+      "label": "Play/Stop"
+    },
+    "top_left": {
+      "output": "Control_L + Shift_L + Left",
+      "label": "Back 4 s"
+    },
+    "top_center": {
+      "output": "space",
+      "label": "Play/Stop"
+    },
+    "top_right": {
+      "output": "Control_L + Shift_L + Right",
+      "label": "Forward 4 s"
+    },
+    "left_upper": {
+      "output": "Prior",
+      "label": "Go to marker A"
+    },
+    "right_upper": {
+      "output": "Next",
+      "label": "Go to marker B"
+    },
+    "left_lower": {
+      "output": "Home",
+      "label": "First frame"
+    },
+    "right_lower": {
+      "output": "End",
+      "label": "Last frame"
+    }
+  }
+}

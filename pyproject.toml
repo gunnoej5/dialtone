@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dialtone"
+version = "0.1.0"
+description = "Manage Ulanzi dial mappings on Ubuntu via input-remapper"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+
+[project.scripts]
+dialtone = "dialtone.cli:main"
+
+[tool.setuptools]
+packages = ["dialtone"]

@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "id": "ulanzi-d100h",
+  "name": "Ulanzi D100H Dial Creative Controller",
+  "usb": {
+    "vendor": "fff1",
+    "product": "0082"
+  },
+  "input_remapper_group": "Ulanzi Dial",
+  "notes": "Bluetooth-only HID. Offline (no Ulanzi Studio) it emits fixed defaults; we remap those on Linux via input-remapper. The dial press reportedly only fires while USB-powered.",
+  "subdevices": {
+    "keyboard": {
+      "name": "Ulanzi Dial Keyboard"
+    }
+  },
+  "controls": [
+    {
+      "id": "dial_ccw",
+      "label": "Dial ↺ (counter-clockwise)",
+      "default": "Volume Down",
+      "subdevice": "keyboard",
+      "codes": [
+        114
+      ]
+    },
+    {
+      "id": "dial_cw",
+      "label": "Dial ↻ (clockwise)",
+      "default": "Volume Up",
+      "subdevice": "keyboard",
+      "codes": [
+        115
+      ]
+    },
+    {
+      "id": "dial_press",
+      "label": "Dial press",
+      "default": "Mute (USB power only)",
+      "subdevice": "keyboard",
+      "codes": [
+        113
+      ]
+    },
+    {
+      "id": "top_left",
+      "label": "Top left",
+      "default": "Previous track",
+      "subdevice": "keyboard",
+      "codes": [
+        165
+      ]
+    },
+    {
+      "id": "top_center",
+      "label": "Top center",
+      "default": "Play/Pause",
+      "subdevice": "keyboard",
+      "codes": [
+        164
+      ]
+    },
+    {
+      "id": "top_right",
+      "label": "Top right",
+      "default": "Next track",
+      "subdevice": "keyboard",
+      "codes": [
+        163
+      ]
+    },
+    {
+      "id": "left_upper",
+      "label": "Left upper",
+      "default": "Paste (Ctrl+V)",
+      "subdevice": "keyboard",
+      "codes": [
+        29,
+        47
+      ]
+    },
+    {
+      "id": "left_lower",
+      "label": "Left lower",
+      "default": "Copy (Ctrl+C)",
+      "subdevice": "keyboard",
+      "codes": [
+        29,
+        46
+      ]
+    },
+    {
+      "id": "right_upper",
+      "label": "Right upper",
+      "default": "Redo (Ctrl+Y)",
+      "subdevice": "keyboard",
+      "codes": [
+        29,
+        21
+      ]
+    },
+    {
+      "id": "right_lower",
+      "label": "Right lower",
+      "default": "Undo (Ctrl+Z)",
+      "subdevice": "keyboard",
+      "codes": [
+        29,
+        44
+      ]
+    }
+  ]
+}
