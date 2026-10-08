@@ -15,3 +15,6 @@ dialtone = "dialtone.cli:main"
 
 [tool.setuptools]
 packages = ["dialtone"]
+
+[tool.setuptools.package-data]
+dialtone = ["assets/dial-skin/*"]

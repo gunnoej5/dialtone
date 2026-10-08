@@ -31,6 +31,19 @@ def resolve_hashes(device: Device, sysfs: Path = hashing.SYSFS_INPUT) -> dict[st
     return out
 
 
+def target_for(output: str) -> str:
+    """Wheel / mouse macros must be injected through input-remapper's mouse uinput."""
+    return "mouse" if ("wheel(" in output or "mouse(" in output) else "keyboard"
+
+
+def active_preset(device: Device) -> str | None:
+    path = config_dir() / "config.json"
+    try:
+        return json.loads(path.read_text()).get("autoload", {}).get(device.group)
+    except (OSError, ValueError):
+        return None
+
+
 def build_preset(device: Device, profile: Profile, hashes: dict[str, str]) -> list[dict]:
     mappings = []
     for control in device.controls:
@@ -42,7 +55,7 @@ def build_preset(device: Device, profile: Profile, hashes: dict[str, str]) -> li
                 {"type": EV_KEY, "code": code, "origin_hash": hashes[control.subdevice]}
                 for code in control.codes
             ],
-            "target_uinput": "keyboard",
+            "target_uinput": target_for(binding.output),
             "output_symbol": binding.output,
             "name": binding.label or control.label,
             "mapping_type": "key_macro",

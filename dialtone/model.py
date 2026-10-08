@@ -8,6 +8,7 @@ from pathlib import Path
 PKG_ROOT = Path(__file__).resolve().parent.parent
 BUILTIN_DEVICES = PKG_ROOT / "devices"
 BUILTIN_PROFILES = PKG_ROOT / "profiles"
+BUILTIN_ACTIONS = PKG_ROOT / "actions"
 
 
 @dataclass
@@ -83,6 +84,20 @@ class Profile:
         }
         return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
+    def copy(self, name: str) -> "Profile":
+        return Profile(name=name, device=self.device, app=self.app,
+                       description=self.description,
+                       controls={k: Binding(b.output, b.label) for k, b in self.controls.items()})
+
+    def is_user(self) -> bool:
+        return self.path is not None and user_profile_dir() in self.path.parents
+
+    def default_path(self) -> Path:
+        if self.is_user():
+            return self.path
+        slug = "".join(ch if ch.isalnum() else "-" for ch in self.name.lower()).strip("-")
+        return user_profile_dir() / f"{slug or 'profile'}.json"
+
     def save(self, path: Path | None = None) -> Path:
         target = path or self.path
         if target is None:
@@ -97,6 +112,31 @@ def user_profile_dir() -> Path:
     from os import environ
     base = Path(environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
     return base / "dialtone" / "profiles"
+
+
+@dataclass
+class Action:
+    label: str
+    output: str
+
+
+@dataclass
+class Catalog:
+    name: str
+    match: str
+    groups: list[tuple[str, list[Action]]]
+
+    def applies_to(self, app: str) -> bool:
+        return bool(self.match) and self.match.lower() in app.lower()
+
+
+def load_catalogs(folder: Path = BUILTIN_ACTIONS) -> list[Catalog]:
+    out = []
+    for path in sorted(folder.glob("*.json")):
+        raw = json.loads(path.read_text())
+        out.append(Catalog(raw["name"], raw.get("match", ""),
+                           [(g["name"], [Action(**a) for a in g["actions"]]) for g in raw["groups"]]))
+    return out
 
 
 def load_devices() -> dict[str, Device]:

@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "name": "General",
+  "match": "",
+  "groups": [
+    {
+      "name": "Media",
+      "actions": [
+        {
+          "label": "Volume up",
+          "output": "KEY_VOLUMEUP"
+        },
+        {
+          "label": "Volume down",
+          "output": "KEY_VOLUMEDOWN"
+        },
+        {
+          "label": "Mute",
+          "output": "KEY_MUTE"
+        },
+        {
+          "label": "Play / Pause",
+          "output": "KEY_PLAYPAUSE"
+        },
+        {
+          "label": "Next track",
+          "output": "KEY_NEXTSONG"
+        },
+        {
+          "label": "Previous track",
+          "output": "KEY_PREVIOUSSONG"
+        }
+      ]
+    },
+    {
+      "name": "Navigation",
+      "actions": [
+        {
+          "label": "Left",
+          "output": "Left"
+        },
+        {
+          "label": "Right",
+          "output": "Right"
+        },
+        {
+          "label": "Up",
+          "output": "Up"
+        },
+        {
+          "label": "Down",
+          "output": "Down"
+        },
+        {
+          "label": "Page up",
+          "output": "Prior"
+        },
+        {
+          "label": "Page down",
+          "output": "Next"
+        },
+        {
+          "label": "Home",
+          "output": "Home"
+        },
+        {
+          "label": "End",
+          "output": "End"
+        },
+        {
+          "label": "Tab",
+          "output": "Tab"
+        },
+        {
+          "label": "Enter",
+          "output": "Return"
+        },
+        {
+          "label": "Escape",
+          "output": "Escape"
+        }
+      ]
+    },
+    {
+      "name": "Editing",
+      "actions": [
+        {
+          "label": "Copy",
+          "output": "Control_L + c"
+        },
+        {
+          "label": "Paste",
+          "output": "Control_L + v"
+        },
+        {
+          "label": "Cut",
+          "output": "Control_L + x"
+        },
+        {
+          "label": "Undo",
+          "output": "Control_L + z"
+        },
+        {
+          "label": "Redo",
+          "output": "Control_L + y"
+        },
+        {
+          "label": "Save",
+          "output": "Control_L + s"
+        },
+        {
+          "label": "Select all",
+          "output": "Control_L + a"
+        }
+      ]
+    },
+    {
+      "name": "Mouse",
+      "actions": [
+        {
+          "label": "Scroll up",
+          "output": "wheel(up, 1)"
+        },
+        {
+          "label": "Scroll down",
+          "output": "wheel(down, 1)"
+        },
+        {
+          "label": "Scroll left",
+          "output": "wheel(left, 1)"
+        },
+        {
+          "label": "Scroll right",
+          "output": "wheel(right, 1)"
+        }
+      ]
+    }
+  ]
+}

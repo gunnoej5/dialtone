@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "name": "Avidemux",
+  "match": "Avidemux",
+  "groups": [
+    {
+      "name": "Navigate",
+      "actions": [
+        {
+          "label": "Previous frame",
+          "output": "Left"
+        },
+        {
+          "label": "Next frame",
+          "output": "Right"
+        },
+        {
+          "label": "Previous keyframe",
+          "output": "Down"
+        },
+        {
+          "label": "Next keyframe",
+          "output": "Up"
+        },
+        {
+          "label": "Back 1 s",
+          "output": "Shift_L + Left"
+        },
+        {
+          "label": "Forward 1 s",
+          "output": "Shift_L + Right"
+        },
+        {
+          "label": "Back 2 s",
+          "output": "Control_L + Left"
+        },
+        {
+          "label": "Forward 2 s",
+          "output": "Control_L + Right"
+        },
+        {
+          "label": "Back 4 s",
+          "output": "Control_L + Shift_L + Left"
+        },
+        {
+          "label": "Forward 4 s",
+          "output": "Control_L + Shift_L + Right"
+        },
+        {
+          "label": "First frame",
+          "output": "Home"
+        },
+        {
+          "label": "Last frame",
+          "output": "End"
+        },
+        {
+          "label": "Go to marker A",
+          "output": "Prior"
+        },
+        {
+          "label": "Go to marker B",
+          "output": "Next"
+        },
+        {
+          "label": "Go to time…",
+          "output": "Control_L + t"
+        }
+      ]
+    },
+    {
+      "name": "Playback",
+      "actions": [
+        {
+          "label": "Play / Stop",
+          "output": "space"
+        }
+      ]
+    },
+    {
+      "name": "Edit",
+      "actions": [
+        {
+          "label": "Set marker A",
+          "output": "Control_L + Prior"
+        },
+        {
+          "label": "Set marker B",
+          "output": "Control_L + Next"
+        },
+        {
+          "label": "Reset markers",
+          "output": "Control_L + Home"
+        },
+        {
+          "label": "Delete A→B selection",
+          "output": "Delete"
+        },
+        {
+          "label": "Cut",
+          "output": "Control_L + x"
+        },
+        {
+          "label": "Copy",
+          "output": "Control_L + c"
+        },
+        {
+          "label": "Paste",
+          "output": "Control_L + v"
+        },
+        {
+          "label": "Undo",
+          "output": "Control_L + z"
+        },
+        {
+          "label": "Redo",
+          "output": "Control_L + y"
+        }
+      ]
+    },
+    {
+      "name": "File",
+      "actions": [
+        {
+          "label": "Open",
+          "output": "Control_L + o"
+        },
+        {
+          "label": "Append",
+          "output": "Control_L + a"
+        },
+        {
+          "label": "Save video",
+          "output": "Control_L + s"
+        },
+        {
+          "label": "Save frame as PNG",
+          "output": "Control_L + p"
+        },
+        {
+          "label": "Video filters",
+          "output": "Control_L + Alt_L + f"
+        },
+        {
+          "label": "Information",
+          "output": "Alt_L + Return"
+        }
+      ]
+    },
+    {
+      "name": "View",
+      "actions": [
+        {
+          "label": "Zoom 1:1",
+          "output": "2"
+        },
+        {
+          "label": "Zoom 1:2",
+          "output": "3"
+        },
+        {
+          "label": "Fit to window",
+          "output": "0"
+        }
+      ]
+    }
+  ]
+}

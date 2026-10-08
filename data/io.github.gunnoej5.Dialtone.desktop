@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Dialtone
+Comment=Map your Ulanzi dial per app
+Exec=sh -c 'cd "@REPO@" && exec python3 -m dialtone gui'
+Icon=@REPO@/dialtone/assets/dial-skin/ulanzi-knob.png
+Categories=Utility;Settings;HardwareSettings;
+Keywords=ulanzi;dial;d100h;input;remap;
+StartupNotify=true
